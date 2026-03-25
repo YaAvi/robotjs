@@ -126,8 +126,7 @@ void moveMouse(MMSignedPoint point)
 	XFlush(display);
 #elif defined(IS_WINDOWS)
 
-	if(vscreenWidth<0 || vscreenHeight<0)
-		updateScreenMetrics();
+	updateScreenMetrics();
 
 	//Mouse motion is now done using SendInput with MOUSEINPUT. We use Absolute mouse positioning
 	#define MOUSE_COORD_TO_ABS(coord, width_or_height) ((65536 * (coord) / width_or_height) + ((coord) < 0 ? -1 : 1))
